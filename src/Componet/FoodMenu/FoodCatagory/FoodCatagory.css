@@ -1,0 +1,12 @@
+.catgory_item{
+ text-align: center;
+ margin-top: 50px;
+}
+
+.cataory_btn{
+    border: none;
+    outline: none;
+    background-color: white;
+    font-weight: 500;
+    padding: 0px 20px;
+}
