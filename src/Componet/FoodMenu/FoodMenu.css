@@ -1,0 +1,11 @@
+.checkOut-btn{
+    border: none;
+    display: block;
+    /* text-align: center; */
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    padding: 9px 45px;
+    border-radius: 5px;
+    background-color: #c9c5c5;
+}

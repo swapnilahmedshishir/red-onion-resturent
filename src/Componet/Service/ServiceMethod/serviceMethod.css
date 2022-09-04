@@ -1,0 +1,10 @@
+.display_image{
+    height: 320px;
+}
+.servise_template{
+    padding: 20px;
+}
+.service_text{
+    box-shadow: 1px 1px 10px 1px gray;
+    border-radius: 20px;
+}

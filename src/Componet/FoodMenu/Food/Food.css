@@ -1,0 +1,18 @@
+.food_menu{
+    margin-top: 50px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.food_menu:hover{
+    box-shadow:1px 1px 9px 2px gray ;
+    border-radius: 10px;
+   
+}
+
+.food_Image{
+    width: 150px;
+    margin-bottom: 9px;
+   
+}
