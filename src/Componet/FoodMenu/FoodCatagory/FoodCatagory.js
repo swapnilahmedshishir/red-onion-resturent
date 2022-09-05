@@ -1,24 +1,40 @@
-import { red } from '@mui/material/colors';
-import { fontSize, fontWeight } from '@mui/system';
-import React from 'react';
-import './FoodCatagory.css';
+import React from "react";
+import "./FoodCatagory.css";
 const FoodCatagory = (props) => {
-    const {catgory, setCatgory} = props;
-//console.log(catgory);
- const  btnActive = {    
-    color: 'red',
-    fontWeight:500
-}
+  const { catgory, setCatgory } = props;
 
-    
-    return (
-        <div className='catgory_item'> 
-            <button  className='cataory_btn' onClick={() => setCatgory('breakfast')}>Breakfast</button>
-            <button  className='cataory_btn' onClick={() => setCatgory('lunch')}>Lunch</button>
-            <button  className='cataory_btn' onClick={() => setCatgory('dinner')}>Dinner</button><br/><br/>
-            <p style={btnActive}>{catgory}</p>
-        </div>
-    );
+  const menuItem = ["breakfast", "lunch", "dinner"];
+
+  return (
+    <div className="catgory_item">
+      <button
+        className={
+          catgory === menuItem[0] ? "cataory_btn btn_active" : "cataory_btn"
+        }
+        onClick={() => setCatgory("breakfast")}
+      >
+        Breakfast
+      </button>
+      <button
+        className={
+          catgory === menuItem[1] ? "cataory_btn btn_active" : "cataory_btn"
+        }
+        onClick={() => setCatgory("lunch")}
+      >
+        Lunch
+      </button>
+      <button
+        className={
+          catgory === menuItem[2] ? "cataory_btn btn_active" : "cataory_btn"
+        }
+        onClick={() => setCatgory("dinner")}
+      >
+        Dinner
+      </button>
+      <br />
+      <br />
+    </div>
+  );
 };
 
 export default FoodCatagory;

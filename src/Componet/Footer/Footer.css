@@ -1,0 +1,11 @@
+.footer_style{
+    color:white;
+    padding: 60px 10px 40px 10px ;
+}
+ul{
+    list-style: none;
+}
+
+ul li{
+    padding: 7px;
+}

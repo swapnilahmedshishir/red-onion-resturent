@@ -4,6 +4,9 @@ import FackData from '../../FackData/generated.json';
 import Hero from '../Hero/Hero';
 import FoodMenu from '../FoodMenu/FoodMenu';
 import Service from '../Service/Service';
+import Footer from '../Footer/Footer';
+import './Home.css';
+
 const Home = () => {
   const fackData = FackData ;
  const [fooditem, setfooditem] = useState([]);
@@ -20,6 +23,7 @@ const Home = () => {
             <Hero></Hero>
             <FoodMenu fackData={fackData}></FoodMenu>
             <Service></Service>
+            <Footer></Footer>
         </div>
     );
 };
