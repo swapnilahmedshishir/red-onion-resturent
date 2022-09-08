@@ -4,26 +4,24 @@ import FackData from '../../FackData/generated.json';
 import Hero from '../Hero/Hero';
 import FoodMenu from '../FoodMenu/FoodMenu';
 import Service from '../Service/Service';
-import Footer from '../Footer/Footer';
+
 import './Home.css';
 
 const Home = () => {
-  const fackData = FackData ;
- const [fooditem, setfooditem] = useState([]);
- useEffect(() => {
-    fackData.map(dt =>  setfooditem(dt) );
- })
+//   const fackData = FackData ;
+//  const [fooditem, setfooditem] = useState([]);
+//  useEffect(() => {
+//     fackData.map(dt =>  setfooditem(dt) );
+//  })
 //console.log(product.price);
 
 
 
     return (
-        <div>
-            <Header></Header>
+        <div>            
             <Hero></Hero>
-            <FoodMenu fackData={fackData}></FoodMenu>
-            <Service></Service>
-            <Footer></Footer>
+            <FoodMenu></FoodMenu>
+            <Service></Service>            
         </div>
     );
 };

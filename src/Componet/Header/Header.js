@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   const Logo = "https://i.postimg.cc/nzQJXbng/logo2.png";
-  const CartIcon = (
-    <img
+  
+ const CartIcon = (
+     <img
       src="https://img.icons8.com/material-outlined/24/000000/shopping-cart--v1.png"
       alt="cart_icon"
     />
@@ -14,9 +16,9 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <Link to='/home' className="navbar-brand">
           <img className="logo_image" src={Logo} alt="logo-ima" />
-        </a>
+        </Link>
 
         <div className="d-flex collapse navbar-collapse">
           <ul className="navbar-nav  flex-row flex-wrap ms-md-auto">

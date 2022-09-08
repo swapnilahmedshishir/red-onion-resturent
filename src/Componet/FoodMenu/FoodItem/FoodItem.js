@@ -13,7 +13,7 @@ const FoodItem = (props) => {
           setFood(matchProduct);
       }, [catgory]);
       
-    //console.log(food);
+    //console.log(food[0]._id);
     return (
         <div className='container'>
            <div className='row'>            
