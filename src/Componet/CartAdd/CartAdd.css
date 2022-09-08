@@ -1,5 +1,12 @@
 .img-style{
-    width: 500px;
+    width: 450px;
     display: block;
     margin: 0 auto;
+}
+
+.button-value{
+    font-size:48px;
+}
+.desciption_food{
+    margin-top: 80px;
 }
