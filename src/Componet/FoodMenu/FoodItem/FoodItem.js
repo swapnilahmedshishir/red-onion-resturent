@@ -12,13 +12,17 @@ const FoodItem = (props) => {
           (fd) => fd.catagory.toLowerCase() === catgory.toLowerCase());
           setFood(matchProduct);
       }, [catgory]);
-      
-    //console.log(food[0]._id);
+
+      const setCartProduct = (product) => {
+        console.log(product);
+    }
+     
+     
     return (
         <div className='container'>
            <div className='row'>            
             {
-                food.map(fd => <Food  key={fd._id} food={fd}></Food>)
+                food.map(fd => <Food  key={fd._id} food={fd} setCartProduct={setCartProduct} />)
             }
             </div> 
         </div>

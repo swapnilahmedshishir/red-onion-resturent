@@ -24,10 +24,10 @@ const Header = () => {
           <ul className="navbar-nav  flex-row flex-wrap ms-md-auto">
             <li className="nav-item p-3">{CartIcon}</li>
             <li className="nav-item p-3">
-              <button className="btn">Login</button>
+              <Link to='/Signin'><button className="btn">Sign in</button></Link>
             </li>
             <li className="nav-item p-3">
-              <button className="btn btn-danger">Sign up</button>
+             <Link to='/singUp'><button className="btn btn-danger">Sign up</button></Link> 
             </li>
           </ul>
         </div>

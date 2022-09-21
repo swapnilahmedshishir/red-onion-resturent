@@ -5,6 +5,8 @@ import Erro from './Componet/Erro/Erro';
 import Header from './Componet/Header/Header';
 import Home from './Componet/Home/Home';
 import Footer from './Componet/Footer/Footer';
+import LoginPage from './Componet/Login/LoginPage';
+import SingUp from './Componet/Singup/SingUp';
 function App() {
   
   return (
@@ -13,8 +15,10 @@ function App() {
       <Routes>
         <Route path="/home" element={<Home/>} />
         <Route index element={<Home/>} />
-        <Route path='*' element={<Erro/>}/>
         <Route path='/food/:foodId' element={<CartAdd/>}/>
+        <Route path='/Signin' element ={<LoginPage/>}/>
+        <Route path='/singUp' element ={<SingUp/>}/>
+        <Route path='*' element={<Erro/>}/>
       </Routes>
       <Footer></Footer>
     </div>
