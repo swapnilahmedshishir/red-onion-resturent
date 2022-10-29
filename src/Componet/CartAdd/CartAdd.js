@@ -1,7 +1,7 @@
-import React, {useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import FackData from '../../FackData/generated.json';
-import { addToDb } from '../../utilities/fakedb';
+import { addToDb, getDb } from '../../utilities/fakedb';
 import './CartAdd.css';
 
 const CartAdd = (props) => {
@@ -17,8 +17,12 @@ const CartAdd = (props) => {
          alt="cart_icon"
        />
      );
+
+
+
      //count the quantity 
      const [quantity , setQuntity] = useState(1);
+     
      
      const increment = () => {
         setQuntity(quantity + 1);
@@ -32,11 +36,8 @@ const CartAdd = (props) => {
         
      }
 
-     //food item in set cart 
-     //const [cart, setCart] = useState([]);
-     const setFoddItemDb = (id) =>{
-               // console.log(id, quantity);
-                addToDb(id,quantity);
+     const setFoddItemDb = (id, quan) =>{
+        window.location.reload(addToDb(id,quan)); 
      };
      
 
@@ -55,7 +56,7 @@ const CartAdd = (props) => {
                             <input type='button' className='btn btn-success button-value' value="+" onClick={() => increment()} />
                             </div>
                         </div>
-                        <button className="btn btn-danger"  onClick={()=> setFoddItemDb(food._id)} > {CartIc}  Add Cart  </button>
+                        <button className="btn btn-danger"  onClick={()=> setFoddItemDb(food._id, quantity)} > {CartIc}  Add Cart  </button>
                     </div>
                 </div>
                 <div className='col-7'>

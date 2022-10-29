@@ -15,20 +15,20 @@ const LoginPage = () => {
             {/* Email input  */}
             <div className="form-outline mb-4">
                 <input type="email" id="form1Example1" className="form-control" />
-                <label className="form-label" for="form1Example1">Email address</label>
+                <label className="form-label" htmlFor="form1Example1">Email address</label>
             </div>
 
             {/* <!-- Password input --> */}
             <div className="form-outline mb-4">
                 <input type="password" id="form1Example2" className="form-control" />
-                <label className="form-label" for="form1Example2">Password</label>
+                <label className="form-label" htmlFor="form1Example2">Password</label>
             </div>
 
             
 
             {/* <!-- Submit button --> */}
             <button type="submit" className="btn btn-primary btn-block">Sign in</button>
-                <div claclassNamess="col">
+                <div className="col">
                     {/* <!-- Simple link --> */}
                     <Link to='/singUp'>Sing up an account</Link>
                 

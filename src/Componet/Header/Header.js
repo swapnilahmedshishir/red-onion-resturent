@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 
@@ -11,6 +11,32 @@ const Header = () => {
       alt="cart_icon"
     />
   );
+
+  const [cardPd, setCardPd] = useState([]);
+  const [updatePd , setUpdatePd] = useState(0)
+  useEffect(() => {
+    const data = localStorage.getItem('foodAdd_cart');
+    const product = JSON.parse(data);
+    const dataObjKey = Object.values(product || {});
+  if (product) {
+    setCardPd(dataObjKey);
+  }
+  },[]);
+  console.log(cardPd);
+
+  
+
+  useEffect(() => {
+    let sum = 0 ;
+    const numbers = cardPd;
+    numbers.forEach(myFunction);  
+   function myFunction(item) {
+    sum += item;
+   }
+   setUpdatePd(sum)
+  })
+  console.log(updatePd);
+
   
 
   return (
@@ -22,7 +48,7 @@ const Header = () => {
 
         <div className="d-flex collapse navbar-collapse">
           <ul className="navbar-nav  flex-row flex-wrap ms-md-auto">
-            <li className="nav-item p-3">{CartIcon}</li>
+            <li className="nav-item p-3">{CartIcon}<span>{updatePd}</span></li>
             <li className="nav-item p-3">
               <Link to='/Signin'><button className="btn">Sign in</button></Link>
             </li>

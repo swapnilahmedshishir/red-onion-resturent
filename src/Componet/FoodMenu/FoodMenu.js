@@ -12,14 +12,14 @@ const FoodMenu = (props) => {
  
  const [cartProduct, setCartProduct]  = useState(0);
  //console.log(catgory);   
- useEffect(() => {
+useEffect(() => {
   const saveDB = getDb();
   const readDB = JSON.parse(saveDB) || {};
   const foodItem = Object.values(readDB);
   setCartProduct(foodItem.length);
  })
  
- console.log(cartProduct);
+ //console.log(cartProduct);
  
  return (
    <div>
