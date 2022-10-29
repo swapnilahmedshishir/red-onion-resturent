@@ -10,7 +10,7 @@ const CartAdd = (props) => {
     const {foodId} = useParams();
     const fackData = FackData;
     const food = fackData.find(fd => fd._id === foodId )
-    const {price , picture, title , about} = food;
+    const {price , picture, title , about } = food;
     const CartIc = (
         <img className='px-2'
          src="https://img.icons8.com/material-outlined/24/000000/shopping-cart--v1.png"
@@ -21,24 +21,29 @@ const CartAdd = (props) => {
 
 
      //count the quantity 
-     const [quantity , setQuntity] = useState(1);
+     const [countProduct , setCountProduct] = useState(1);
      
      
      const increment = () => {
-        setQuntity(quantity + 1);
+        setCountProduct(countProduct + 1);
      }
      
      const decrement = () => {
-        if(quantity > 1){
-            setQuntity(quantity - 1);
+        if(countProduct > 1){
+            setCountProduct(countProduct - 1);
 
         }
         
      }
 
      const setFoddItemDb = (id, quan) =>{
-        window.location.reload(addToDb(id,quan)); 
+        window.location.reload();
+        addToDb(id,quan);
+         
+        
      };
+     
+    
      
 
     return (
@@ -52,11 +57,11 @@ const CartAdd = (props) => {
                             <div className='col-4'><h3>{price}</h3></div>
                             <div className='col-8'>
                             <input type='button' className='btn btn-success' value="-" onClick={() => decrement()} />
-                                <strong className='p-3 button-value'>{quantity}</strong>
+                                <strong className='p-3 button-value'>{countProduct}</strong>
                             <input type='button' className='btn btn-success button-value' value="+" onClick={() => increment()} />
                             </div>
                         </div>
-                        <button className="btn btn-danger"  onClick={()=> setFoddItemDb(food._id, quantity)} > {CartIc}  Add Cart  </button>
+                        <button className="btn btn-danger"  onClick={()=> setFoddItemDb(food._id , countProduct) } > {CartIc}  Add Cart  </button>
                     </div>
                 </div>
                 <div className='col-7'>
@@ -68,5 +73,7 @@ const CartAdd = (props) => {
         </div>
     );
 };
+
+
 
 export default CartAdd;

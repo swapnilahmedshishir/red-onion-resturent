@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import FackData from '../../FackData/generated.json';
 
 const Header = () => {
   const Logo = "https://i.postimg.cc/nzQJXbng/logo2.png";
@@ -11,32 +12,27 @@ const Header = () => {
       alt="cart_icon"
     />
   );
+  const fackData = FackData;
 
   const [cardPd, setCardPd] = useState([]);
-  const [updatePd , setUpdatePd] = useState(0)
+  const [updatePd , setUpdatePd] = useState({});
   useEffect(() => {
     const data = localStorage.getItem('foodAdd_cart');
     const product = JSON.parse(data);
-    const dataObjKey = Object.values(product || {});
+    const dataObjKey = Object.keys(product || {}); 
+    const dtakey = dataObjKey.map(dtKey => {
+      const products = fackData.find(fd => fd._id === dtKey);
+      products.quantity = product[dtKey];
+      // console.log(products);
+
+    });
+    // console.log(dtakey);
+
   if (product) {
     setCardPd(dataObjKey);
   }
   },[]);
-  console.log(cardPd);
-
-  
-
-  useEffect(() => {
-    let sum = 0 ;
-    const numbers = cardPd;
-    numbers.forEach(myFunction);  
-   function myFunction(item) {
-    sum += item;
-   }
-   setUpdatePd(sum)
-  })
-  console.log(updatePd);
-
+  // console.log(cardPd);
   
 
   return (
@@ -48,7 +44,10 @@ const Header = () => {
 
         <div className="d-flex collapse navbar-collapse">
           <ul className="navbar-nav  flex-row flex-wrap ms-md-auto">
-            <li className="nav-item p-3">{CartIcon}<span>{updatePd}</span></li>
+            <li className="nav-item p-3">
+              {CartIcon}<span>{cardPd.length}</span>
+             
+            </li>
             <li className="nav-item p-3">
               <Link to='/Signin'><button className="btn">Sign in</button></Link>
             </li>
@@ -56,6 +55,9 @@ const Header = () => {
              <Link to='/singUp'><button className="btn btn-danger">Sign up</button></Link> 
             </li>
           </ul>
+          <div>
+            hlw
+          </div>
         </div>
       </div>
     </nav>
