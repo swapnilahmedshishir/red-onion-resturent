@@ -1,3 +1,28 @@
 .logo_image{
   width: 139px;
 }
+.nav-item a {
+  text-decoration: none;
+  position: relative;
+  margin-left: 40px;
+}
+.nav-item a img {
+ width: 35px;
+}
+.nav-item .link_item:hover{
+  padding: 5px;
+}
+#pdquantity{
+  position: absolute;
+  top: -21px;
+  left: 20px;
+  box-sizing: border-box;
+ text-decoration: none;
+ color: white;
+ background-color: red;
+ font-weight: 700;
+ font-size: 20px;
+ border-radius: 50%;
+ padding:3px 10px;
+ 
+}

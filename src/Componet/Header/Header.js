@@ -33,8 +33,13 @@ const Header = () => {
   }
   },[]);
   // console.log(cardPd);
-  
+  const [isShow, setIsShow] = useState(false);
 
+  const ProductInfo = (e) =>{
+    setIsShow(current => !current)
+  }
+  
+console.log(isShow);
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container">
@@ -45,20 +50,26 @@ const Header = () => {
         <div className="d-flex collapse navbar-collapse">
           <ul className="navbar-nav  flex-row flex-wrap ms-md-auto">
             <li className="nav-item p-3">
-              {CartIcon}<span>{cardPd.length}</span>
              
+              <span className='link_item'><Link to='/cart'> {CartIcon}<span id="pdquantity">{cardPd.length}</span></Link></span>
+           
             </li>
-            <li className="nav-item p-3">
-              <Link to='/Signin'><button className="btn">Sign in</button></Link>
-            </li>
-            <li className="nav-item p-3">
-             <Link to='/singUp'><button className="btn btn-danger">Sign up</button></Link> 
-            </li>
+            <li className="nav-item p-3" onClick={ProductInfo}>
+            {
+            isShow ? (<Link to='/singUp'><button className="btn btn-warning"> Sign up </button></Link>
+           
+          ): (   <Link to='/Signin'><button className="btn btn-success"> Sign in </button></Link>
+            )
+          }  
+          </li>         
           </ul>
-          <div>
-            hlw
-          </div>
+         
+          
         </div>
+        <div style={{'z-index':1}}>
+         
+         </div>
+       
       </div>
     </nav>
   );
